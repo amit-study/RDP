@@ -4,7 +4,7 @@
 * Fork this repo
 * Run The Workflow
 * Wait 2 min
-* Click the link
+* Click the link [ workflow output ]
 * Read login:passwd details given below the link
 * Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
