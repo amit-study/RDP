@@ -1,10 +1,6 @@
-# RDP
-# Introduction
-* Hi , I am amistudydude.
-* This is my second profile.
-* Follow these instructions to avoid confusion.
-# **I am using Apache-Guacamole here . If you know about it , you are a pro**
-## How to get an RDP
+
+# How to get an RDP
+## **I am using Apache-Guacamole here . If you know about it , you are a pro**
 * Fork this repo
 * Run The Workflow
 * Wait 2 min
