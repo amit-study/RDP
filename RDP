@@ -13,6 +13,11 @@ echo "**Note2** - You will be redirected to settings . Do the settings you need 
 echo "" &>> log.txt
 echo "**Note3** - This RDP will get reset on : " &>> log.txt
 date -d '+6 hour' '+%T' &>> log.txt
+echo "(US)" &>> log.txt
+sudo unlink /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+date -d '+6 hour' '+%T' &>> log.txt
+echo "(INDIAN-TIME)" &>> log.txt
 echo "" &>> log.txt
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x ./cli 
 ./cli --url http://localhost:8080 &>> 8080 &
