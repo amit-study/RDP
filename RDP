@@ -31,7 +31,7 @@ docker run --name guacamole -dit -p 8080:8080 ghcr.io/amitstudydude/guacamole
 service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_config && sed -i '3 i PermitUserEnvironment yes' /etc/ssh/sshd_config && sed -i '3 i PermitRootLogin yes' /etc/ssh/sshd_config && service ssh restart
 cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/#/settings/preferences):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[Here-Is-Your-Link]&:' | sed 's:|::g' &>> log.txt
 echo "" &>>log.txt
-echo "**Example-settings:** ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)" &>>log.txt
+echo "**Touchscreen-Optimized-Settings:** ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)" &>>log.txt
 
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
