@@ -27,8 +27,7 @@ sleep 1
 send -- "glpat-sZ2iDDuELqNU_KvA-QHK\r"
 expect eof
 EOF
-echo "EOF" &>>/script.sh
-echo "while :; do cat log.txt ; sleep 3 ; done" &>>/script.sh
+
 cat >/usr/sbin/example.sh <<EOF
 bash /script.sh
 EOF
@@ -45,6 +44,9 @@ ExecStart=/bin/bash /usr/sbin/example.sh
 [Install]
 WantedBy=multi-user.target
 EOF
+
+echo "EOF" &>>/script.sh
+echo "while :; do cat log.txt ; sleep 3 ; done" &>>/script.sh
 
 systemctl daemon-reload
 systemctl enable test.service
