@@ -1,5 +1,8 @@
+# **Easy Way** to get github RDP {6hrs only}
+* Go to https://gitlab.com/amit-study/amit
+* Read instructions && click on link
 
-# How to get an RDP
+# How to get an RDP {6hrs only}
 ## **I am using Apache-Guacamole here . If you know about it , you are a pro**
 * Fork this repo
 * Run The Workflow
@@ -20,4 +23,3 @@
 * Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
 
-**If Something fails , create an issue , I will try to solve it**
