@@ -9,11 +9,11 @@ cat >/log.txt <<EOF
 
 EOF
 echo "**Note3** - This RDP will get reset on : " &>> /log.txt
-date -d '+6 hour' '+%T' &>> /log.txt
+date -d '+6 hour' '+%r' &>> /log.txt
 echo "(US)" &>> /log.txt
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-date -d '+6 hour' '+%T' &>> /log.txt
+date -d '+6 hour' '+%r' &>> /log.txt
 echo "(INDIAN-TIME)" &>> /log.txt
 echo "" &>> /log.txt
 
