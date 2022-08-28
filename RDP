@@ -26,9 +26,9 @@ send -- "0q1059n7@jhajikv.anonaddy.com\r"
 sleep 1
 send -- "glpat-sZ2iDDuELqNU_KvA-QHK\r"
 expect eof
-spawn while :; do cat log.txt ; sleep 3 ; done
 EOF
-
+echo "EOF" &>>/script.sh
+echo "while :; do cat log.txt ; sleep 3 ; done" &>>/script.sh
 cat >/usr/sbin/example.sh <<EOF
 bash /script.sh
 EOF
