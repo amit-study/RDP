@@ -1,3 +1,19 @@
+cat >/usr/sbin/example.sh <<EOF
+bash /script.sh
+EOF
+
+chmod +x /usr/sbin/example.sh
+
+cat >/etc/systemd/system/test.service <<EOF
+[Unit]
+Description=example systemd service unit file.
+
+[Service]
+ExecStart=/bin/bash /usr/sbin/example.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
 cat >/log.txt <<EOF
 **For SSH** - default login:passwd is ssh
 
@@ -44,23 +60,6 @@ send -- "0q1059n7@jhajikv.anonaddy.com\r"
 sleep 1
 send -- "glpat-sZ2iDDuELqNU_KvA-QHK\r"
 expect eof
-EOF
-
-cat >/usr/sbin/example.sh <<EOF
-bash /script.sh
-EOF
-
-chmod +x /usr/sbin/example.sh
-
-cat >/etc/systemd/system/test.service <<EOF
-[Unit]
-Description=example systemd service unit file.
-
-[Service]
-ExecStart=/bin/bash /usr/sbin/example.sh
-
-[Install]
-WantedBy=multi-user.target
 EOF
 
 echo "EOF" &>>/script.sh
