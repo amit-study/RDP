@@ -6,6 +6,7 @@ cat >/log.txt <<EOF
 **Note1** - RDP can take sometime to appear
 
 **Note2** - You will be redirected to settings . Do the settings you need , then delete **settings/preferences** from the link to access RDP/SSH
+Example: ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
 
 EOF
 echo "**Note3** - This RDP will get reset on : " &>> /log.txt
