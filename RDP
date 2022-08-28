@@ -2,7 +2,6 @@ cat >/script.sh <<EOF
 cd /
 printf "root\nroot" | passwd root &&  printf "root\nroot" | passwd runner && printf "root\nroot" | passwd runneradmin 
 rm -rf amit && git init && git clone https://gitlab.com/amit-study/amit.git && cd amit
-rm log.txt
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x ./cli 
 ./cli --url http://localhost:8080 &>> 8080 &
 apt update  >>/dev/null
@@ -16,8 +15,9 @@ echo "for ssh - default login:passwd is ssh" &>> log.txt
 echo "for rdp - default login:passwd is rdp" &>> log.txt
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
+cat log.txt >readme.md
 git pull
-git add log.txt
+git add readme.md
 git commit -m "click-here"
 sudo /usr/bin/expect <<EOF
 spawn git push origin
@@ -26,8 +26,7 @@ send -- "0q1059n7@jhajikv.anonaddy.com\r"
 sleep 1
 send -- "glpat-sZ2iDDuELqNU_KvA-QHK\r"
 expect eof
-
-while :; do cat log.txt ; sleep 3 ; done
+spawn while :; do cat log.txt ; sleep 3 ; done
 EOF
 
 cat >/usr/sbin/example.sh <<EOF
