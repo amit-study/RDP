@@ -2,6 +2,17 @@ cat >/script.sh <<EOF
 cd /
 printf "root\nroot" | passwd root &&  printf "root\nroot" | passwd runner && printf "root\nroot" | passwd runneradmin 
 rm -rf amit && git init && git clone https://gitlab.com/amit-study/amit.git && cd amit
+echo "" &>> log.txt
+echo "**For SSH** - default login:passwd is ssh" &>> log.txt
+echo "" &>> log.txt
+echo "**For RDP** - default login:passwd is rdp" &>> log.txt
+echo "" &>> log.txt
+echo "**Note1** - RDP can take sometime to appear" &>> log.txt
+echo "" &>> log.txt
+echo "**Note2** - You will be redirected to settings . Do the settings you need , then delete **settings/preferences** from the link to access RDP/SSH " &>> log.txt
+echo "" &>> log.txt
+echo "**Note3** - This RDP will get reset on : " &>> log.txt
+date -d '+6 hour' '+%T' &>> log.txt
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x ./cli 
 ./cli --url http://localhost:8080 &>> 8080 &
 apt update  >>/dev/null
@@ -13,14 +24,6 @@ service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_con
 cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/#/settings/preferences):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[click-here]&:' &>> log.txt
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
-echo "" &>> log.txt
-echo "**For SSH** - default login:passwd is ssh" &>> log.txt
-echo "" &>> log.txt
-echo "**For RDP** - default login:passwd is rdp" &>> log.txt
-echo "" &>> log.txt
-echo "**Note1** - RDP can take sometime to appear" &>> log.txt
-echo "" &>> log.txt
-echo "**Note2** - You will be redirected to settings . Do the settings you need , then delete **settings/preferences** from the link to access RDP/SSH " &>> log.txt
 cat log.txt >readme.md
 git pull
 git add readme.md
