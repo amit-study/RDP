@@ -1,8 +1,7 @@
 name: RDP
-on:  
- push:
+on: push
 jobs:
-  rerun:
+  interactive:
     runs-on: ubuntu-latest  
     steps:
       - uses: actions/checkout@v2
