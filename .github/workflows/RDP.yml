@@ -3,15 +3,11 @@ on:
  workflow_dispatch:
  push:
 jobs:
-  interactive:
-    runs-on: ubuntu-latest  
-    steps:     
-      - name: new
-        run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/amit-study/bestRDP/main/RDP | bash " 
-
   rerun:
     runs-on: ubuntu-latest  
     steps:
       - uses: actions/checkout@v2
       - name: Merge upstream
-        run:  sleep 5h && sleep 59m && curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/rerun bash
+        run: |
+          printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/amit-study/bestRDP/main/RDP | bash " &
+          curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/rerun | bash
