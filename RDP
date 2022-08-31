@@ -50,7 +50,8 @@ expect eof
 EOF
 
 echo "EOF" &>>/script.sh
-echo "while :; do cat log.txt ; sleep 3 ; done" &>>/script.sh
+echo "sleep 5h" &>>/script.sh
+echo "sleep 56m" &>>/script.sh
 
 cat >/usr/sbin/example.sh <<EOF
 bash /script.sh &
