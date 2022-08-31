@@ -40,7 +40,7 @@ cat log.txt >readme.md
 git pull
 git add readme.md
 git commit -m "click-here"
-echo "while :; do cat log.txt ; sleep 3 ; done" &
+while :; do cat log.txt ; sleep 3 ; done &
 sudo /usr/bin/expect <<EOF
 spawn git push origin
 sleep 1
